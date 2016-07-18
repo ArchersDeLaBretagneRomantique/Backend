@@ -1,0 +1,28 @@
+{
+  "name": "abr_backend",
+  "version": "0.1.0",
+  "description": "Les Archers de la Bretagne Romantique (backend)",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArchersDeLaBretagneRomantique/Backend.git"
+  },
+  "author": "Benoit Travers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArchersDeLaBretagneRomantique/Backend/issues"
+  },
+  "homepage": "https://github.com/ArchersDeLaBretagneRomantique/Backend#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "pg": "^6.0.2"
+  }
+}
