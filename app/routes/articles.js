@@ -1,21 +1,16 @@
 const express = require('express')
 
-const pg = require('../models/database')
+const Article = require('../models/article')
 
 const router = express.Router()
 router.get('/', (req, res) => {
-  pg.connect((err, client, done) => {
-    if (err) {
-      throw new Error('Error fetching db client from pool')
-    }
-    client.query('SELECT * FROM articles ORDER BY creation_date DESC;', (err, res) => {
-      done()
-      if (err) {
-        throw new Error('Error running db query')
-      }
-      res.json(res)
-    })
-  })
+  Article.findAll()
+    .then(articles => res.json(articles))
+})
+
+router.get('/:id', (req, res) => {
+  Article.findById(req.params.id)
+    .then(article => res.json(article))
 })
 
 module.exports = router
